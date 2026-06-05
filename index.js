@@ -95,67 +95,7 @@ function revealElements() {
 window.addEventListener('scroll', revealElements);
 window.addEventListener('load', revealElements);
 
-// ===== BEFORE & AFTER SLIDERS =====
-function initBeforeAfterSliders() {
-  const cards = document.querySelectorAll('.ba-card');
 
-  cards.forEach(card => {
-    const slider = card.querySelector('.ba-slider');
-    const afterLayer = card.querySelector('.ba-after');
-    if (!slider || !afterLayer) return;
-
-    let isDragging = false;
-
-    function getPosition(e) {
-      const rect = card.getBoundingClientRect();
-      let x;
-      if (e.touches) {
-        x = e.touches[0].clientX - rect.left;
-      } else {
-        x = e.clientX - rect.left;
-      }
-      return Math.max(0, Math.min(x, rect.width));
-    }
-
-    function updateSlider(x) {
-      const rect = card.getBoundingClientRect();
-      const percentage = (x / rect.width) * 100;
-      slider.style.left = `${percentage}%`;
-      afterLayer.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
-    }
-
-    function onStart(e) {
-      e.preventDefault();
-      isDragging = true;
-      const x = getPosition(e);
-      updateSlider(x);
-    }
-
-    function onMove(e) {
-      if (!isDragging) return;
-      e.preventDefault();
-      const x = getPosition(e);
-      updateSlider(x);
-    }
-
-    function onEnd() {
-      isDragging = false;
-    }
-
-    // Mouse events
-    slider.addEventListener('mousedown', onStart);
-    card.addEventListener('mousedown', onStart);
-    window.addEventListener('mousemove', onMove);
-    window.addEventListener('mouseup', onEnd);
-
-    // Touch events
-    slider.addEventListener('touchstart', onStart, { passive: false });
-    window.addEventListener('touchmove', onMove, { passive: false });
-    window.addEventListener('touchend', onEnd);
-  });
-}
-
-initBeforeAfterSliders();
 
 // ===== TESTIMONIALS CAROUSEL =====
 function initTestimonialsCarousel() {

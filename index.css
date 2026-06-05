@@ -998,7 +998,6 @@ select {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-xl);
-  cursor: col-resize;
   aspect-ratio: 16 / 10;
 }
 
@@ -1035,37 +1034,11 @@ select {
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 4px;
+  width: 2px;
   background: var(--white);
-  cursor: col-resize;
   z-index: 5;
   transform: translateX(-50%);
-}
-
-.ba-slider::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 44px;
-  height: 44px;
-  background: var(--white);
-  border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-.ba-slider::after {
-  content: '⟨  ⟩';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--primary);
-  z-index: 1;
-  letter-spacing: 4px;
+  opacity: 0.8;
 }
 
 .ba-label {
