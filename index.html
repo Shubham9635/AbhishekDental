@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abhishek Dental Clinic — Expert dental care by Dr. A.K. Gupta at Banakta Road, Badhu Chauraha, Katya, Uttar Pradesh 274404. Services include dental checkups, root canal treatment, teeth whitening, braces, implants and more. Book your appointment today.">
+  <meta name="keywords" content="dental clinic, dentist, Dr A.K. Gupta, Abhishek Dental Clinic, teeth whitening, root canal, dental implants, braces, dental checkup, Badhu Chauraha">
+  <meta name="author" content="Abhishek Dental Clinic">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Abhishek Dental Clinic — Your Smile, Our Priority">
+  <meta property="og:description" content="Premium dental care by Dr. A.K. Gupta. Advanced equipment, personalized treatment, and a comfortable environment.">
+  <meta property="og:type" content="website">
+  <title>Abhishek Dental Clinic — Your Smile, Our Priority | Dr. A.K. Gupta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- ===== PRELOADER ===== -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-tooth">
+      <svg viewBox="0 0 64 64">
+        <path d="M32 4C24 4 18 10 16 18c-2 8-8 28-6 36 2 6 6 6 8 2 2-4 6-12 8-12h12c2 0 6 8 8 12 2 4 6 4 8-2 2-8-4-28-6-36C46 10 40 4 32 4z"/>
+      </svg>
+    </div>
+    <span class="preloader-text">Abhishek Dental Clinic</span>
+    <div class="preloader-bar">
+      <div class="preloader-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="container">
+      <a href="#" class="nav-logo" aria-label="Abhishek Dental Clinic Home">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 64 64"><path d="M32 4C24 4 18 10 16 18c-2 8-8 28-6 36 2 6 6 6 8 2 2-4 6-12 8-12h12c2 0 6 8 8 12 2 4 6 4 8-2 2-8-4-28-6-36C46 10 40 4 32 4z"/></svg>
+        </div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Abhishek Dental</span>
+          <span class="nav-logo-tagline">Dr. A.K. Gupta</span>
+        </div>
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#results" class="nav-link">Results</a>
+        <a href="#testimonials" class="nav-link">Reviews</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#appointment" class="nav-link nav-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book Appointment
+        </a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home" aria-label="Hero">
+    <div class="hero-bg">
+      <img src="images/hero-bg.png" alt="Dental care background" loading="eager">
+      <div class="hero-bg-overlay"></div>
+    </div>
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Trusted Dental Care Since Years
+        </div>
+        <h1 class="hero-title">
+          Your <span class="highlight">Smile</span>,<br>Our Priority
+        </h1>
+        <p class="hero-description">
+          Experience world-class dental care with Dr. A.K. Gupta. We combine advanced technology, gentle hands, and personalized treatment to give you the perfect smile you deserve.
+        </p>
+        <div class="hero-buttons">
+          <a href="#appointment" class="btn-primary" id="heroBookBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book Appointment
+          </a>
+          <a href="https://wa.me/918601060738?text=Hello%20Dr.%20A.K.%20Gupta%2C%20I%20would%20like%20to%20book%20an%20appointment." class="btn-whatsapp" target="_blank" rel="noopener" id="heroWhatsappBtn">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span>Experienced Dentist</span>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <span>Advanced Equipment</span>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            </div>
+            <span>Patient-Focused Care</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="hero-image-glow"></div>
+        <div class="hero-image-wrapper">
+          <img src="images/doctor.jpg" alt="Dr. A.K. Gupta — Experienced Dentist at Abhishek Dental Clinic" loading="eager">
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat-card">
+            <div class="hero-stat-number">7k+</div>
+            <div class="hero-stat-label">Happy Patients</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-number">5+</div>
+            <div class="hero-stat-label">Years of Experience</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-number">9</div>
+            <div class="hero-stat-label">Services</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="about" id="about" aria-label="About Dr. A.K. Gupta">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image reveal-left">
+          <div class="about-image-main">
+            <img src="images/doctor-standing.jpg" alt="Dr. A.K. Gupta — Professional Dentist" loading="lazy">
+          </div>
+          <div class="about-experience-badge">
+            <span class="number">5+</span>
+            <span class="label">Years of Exp.</span>
+          </div>
+        </div>
+
+        <div class="about-content reveal-right">
+          <div class="section-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+            About the Doctor
+          </div>
+          <h2 class="about-name">Dr. A.K. Gupta</h2>
+          <p class="about-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            Senior Dental Surgeon
+          </p>
+          <p class="about-text">
+            With over 5 years of dedicated experience in dentistry, Dr. A.K. Gupta is committed to providing the highest standard of dental care. His patient-first philosophy ensures that every visit is comfortable, thorough, and focused on your unique needs.
+          </p>
+          <p class="about-text">
+            From routine checkups to complex dental procedures, Dr. Gupta combines clinical expertise with the latest dental technology to deliver results that transform smiles and boost confidence.
+          </p>
+
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <span>Gentle Procedures</span>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <span>Top-Rated Care</span>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </div>
+              <span>Free Consultations</span>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </div>
+              <span>Family Dentistry</span>
+            </div>
+          </div>
+
+          <a href="#appointment" class="btn-primary" id="aboutBookBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Schedule a Visit
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES SECTION ===== -->
+  <section class="services" id="services" aria-label="Our Services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          Our Services
+        </div>
+        <h2 class="section-title">Comprehensive <span>Dental Services</span></h2>
+        <p class="section-subtitle">From preventive care to cosmetic transformations, we provide a full range of dental services tailored to your needs.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Dental Checkup -->
+        <div class="service-card reveal" id="service-checkup">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          </div>
+          <h3>Dental Checkup</h3>
+          <p>Thorough examination to detect and prevent dental issues early, ensuring your oral health stays in top condition.</p>
+        </div>
+
+        <!-- Root Canal -->
+        <div class="service-card reveal" id="service-rootcanal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3>Root Canal Treatment</h3>
+          <p>Pain-free root canal therapy to save damaged teeth and relieve discomfort using advanced endodontic techniques.</p>
+        </div>
+
+        <!-- Teeth Cleaning -->
+        <div class="service-card reveal" id="service-cleaning">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M18.7 8l-6.7 6.7L5.3 8"/></svg>
+          </div>
+          <h3>Teeth Cleaning</h3>
+          <p>Professional scaling and polishing to remove plaque, tartar, and stains for a brighter, healthier smile.</p>
+        </div>
+
+        <!-- Dental Implants -->
+        <div class="service-card reveal" id="service-implants">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2v6"/><path d="M9 8h6"/><rect x="9" y="8" width="6" height="4" rx="1"/><path d="M10 12v2"/><path d="M14 12v2"/><path d="M10 14h4"/><path d="M11 14v8"/><path d="M13 14v8"/></svg>
+          </div>
+          <h3>Dental Implants</h3>
+          <p>Permanent tooth replacement solutions that look, feel, and function like your natural teeth.</p>
+        </div>
+
+        <!-- Braces & Aligners -->
+        <div class="service-card reveal" id="service-braces">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="8" rx="2"/><path d="M7 8v8"/><path d="M12 8v8"/><path d="M17 8v8"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
+          </div>
+          <h3>Braces & Aligners</h3>
+          <p>Straighten your teeth with modern braces and clear aligners for a perfectly aligned, confident smile.</p>
+        </div>
+
+        <!-- Teeth Whitening -->
+        <div class="service-card reveal" id="service-whitening">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </div>
+          <h3>Teeth Whitening</h3>
+          <p>Professional whitening treatments to brighten your smile by several shades safely and effectively.</p>
+        </div>
+
+        <!-- Cosmetic Dentistry -->
+        <div class="service-card reveal" id="service-cosmetic">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3>Cosmetic Dentistry</h3>
+          <p>Enhance the aesthetics of your smile with veneers, bonding, and other cosmetic procedures.</p>
+        </div>
+
+        <!-- Tooth Extraction -->
+        <div class="service-card reveal" id="service-extraction">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+          </div>
+          <h3>Tooth Extraction</h3>
+          <p>Safe and painless tooth extraction when necessary, with proper aftercare guidance for quick recovery.</p>
+        </div>
+
+        <!-- Pediatric Dentistry -->
+        <div class="service-card reveal" id="service-pediatric">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h3>Pediatric Dentistry</h3>
+          <p>Gentle, child-friendly dental care designed to keep your little one's smile healthy and happy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BEFORE & AFTER SECTION ===== -->
+  <section class="before-after" id="results" aria-label="Treatment Results">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge" style="border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: var(--primary-light);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          Smile Transformations
+        </div>
+        <h2 class="section-title"><span>Before & After</span> Results</h2>
+        <p class="section-subtitle">See the incredible transformations our patients have experienced. Drag the slider to compare before and after results.</p>
+      </div>
+
+      <div class="ba-grid">
+        <div class="ba-card reveal" data-ba="1">
+          <div class="ba-image-wrapper">
+            <div class="ba-before">
+              <img src="images/before-after-1.png" alt="Teeth alignment transformation — before and after" loading="lazy">
+            </div>
+            <div class="ba-after">
+              <img src="images/before-after-1.png" alt="Teeth alignment transformation — result" loading="lazy">
+            </div>
+            <div class="ba-slider"></div>
+            <span class="ba-label before">Before</span>
+            <span class="ba-label after">After</span>
+          </div>
+        </div>
+
+        <div class="ba-card reveal" data-ba="2">
+          <div class="ba-image-wrapper">
+            <div class="ba-before">
+              <img src="images/before-after-2.png" alt="Teeth whitening transformation — before" loading="lazy">
+            </div>
+            <div class="ba-after">
+              <img src="images/before-after-2.png" alt="Teeth whitening transformation — after" loading="lazy">
+            </div>
+            <div class="ba-slider"></div>
+            <span class="ba-label before">Before</span>
+            <span class="ba-label after">After</span>
+          </div>
+        </div>
+
+        <div class="ba-card reveal" data-ba="3">
+          <div class="ba-image-wrapper">
+            <div class="ba-before">
+              <img src="images/before-after-3.png" alt="Dental implant — before" loading="lazy">
+            </div>
+            <div class="ba-after">
+              <img src="images/before-after-3.png" alt="Dental implant — after" loading="lazy">
+            </div>
+            <div class="ba-slider"></div>
+            <span class="ba-label before">Before</span>
+            <span class="ba-label after">After</span>
+          </div>
+        </div>
+
+        <div class="ba-card reveal" data-ba="4">
+          <div class="ba-image-wrapper">
+            <div class="ba-before">
+              <img src="images/before-after-4.png" alt="Braces treatment — before" loading="lazy">
+            </div>
+            <div class="ba-after">
+              <img src="images/before-after-4.png" alt="Braces treatment — after" loading="lazy">
+            </div>
+            <div class="ba-slider"></div>
+            <span class="ba-label before">Before</span>
+            <span class="ba-label after">After</span>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="why-choose" id="why-choose" aria-label="Why Choose Us">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          Why Choose Us
+        </div>
+        <h2 class="section-title">Why Patients <span>Trust Us</span></h2>
+        <p class="section-subtitle">We go above and beyond to provide a dental experience that is comfortable, affordable, and produces exceptional results.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card reveal" id="why-equipment">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Advanced Equipment</h3>
+          <p>State-of-the-art dental technology for precise diagnosis and comfortable treatment experiences.</p>
+        </div>
+
+        <div class="why-card reveal" id="why-experienced">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>Experienced Dentist</h3>
+          <p>Dr. A.K. Gupta brings over 5 years of clinical expertise and thousands of successful treatments.</p>
+        </div>
+
+        <div class="why-card reveal" id="why-personalized">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+          </div>
+          <h3>Personalized Plans</h3>
+          <p>Customized treatment plans designed specifically for your dental needs and comfort.</p>
+        </div>
+
+        <div class="why-card reveal" id="why-comfortable">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h3>Comfortable Environment</h3>
+          <p>A warm, welcoming clinic atmosphere designed to put even the most anxious patients at ease.</p>
+        </div>
+
+        <div class="why-card reveal" id="why-affordable">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <h3>Affordable Care</h3>
+          <p>Quality dental care at fair, transparent prices with flexible payment options for all patients.</p>
+        </div>
+
+        <div class="why-card reveal" id="why-hygiene">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3>Hygiene & Safety</h3>
+          <p>Strict sterilization protocols and infection control measures for your complete safety.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== APPOINTMENT SECTION ===== -->
+  <section class="appointment" id="appointment" aria-label="Book Appointment">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book Appointment
+        </div>
+        <h2 class="section-title">Schedule Your <span>Visit Today</span></h2>
+        <p class="section-subtitle">Take the first step towards a healthier, brighter smile. Book your appointment with Dr. A.K. Gupta now.</p>
+      </div>
+
+      <div class="appointment-wrapper">
+        <div class="appointment-info reveal-left">
+          <h3>Get in Touch</h3>
+          <p>We're here to help you with all your dental needs. Reach out to us through any of the channels below, or fill out the form to schedule your visit.</p>
+
+          <div class="appointment-contact-item">
+            <div class="appointment-contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div class="appointment-contact-text">
+              <h4>Call Us</h4>
+              <span><a href="tel:+918601060738">+91 86010 60738</a></span>
+            </div>
+          </div>
+
+          <div class="appointment-contact-item">
+            <div class="appointment-contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="appointment-contact-text">
+              <h4>Visit Us</h4>
+              <span>Banakta Road, Badhu Chauraha, Katya, Uttar Pradesh 274404</span>
+            </div>
+          </div>
+
+          <div class="appointment-contact-item">
+            <div class="appointment-contact-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="appointment-contact-text">
+              <h4>Working Hours</h4>
+              <span>Mon – Sat: 9:00 AM – 8:00 PM</span>
+            </div>
+          </div>
+
+          <div class="appointment-contact-item">
+            <div class="appointment-contact-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="appointment-contact-text">
+              <h4>Sunday</h4>
+              <span>10:00 AM – 2:00 PM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="appointment-form-wrapper reveal-right">
+          <h3>Book Your Appointment</h3>
+          <p>Fill in your details and we'll get back to you shortly.</p>
+
+          <form id="appointmentForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label for="patientName">Full Name *</label>
+              <input type="text" id="patientName" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="patientPhone">Phone Number *</label>
+                <input type="tel" id="patientPhone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+              </div>
+              <div class="form-group">
+                <label for="preferredDate">Preferred Date</label>
+                <input type="date" id="preferredDate" name="date">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="treatmentType">Treatment Required</label>
+              <select id="treatmentType" name="treatment">
+                <option value="">Select a treatment</option>
+                <option value="Dental Checkup">Dental Checkup</option>
+                <option value="Root Canal Treatment">Root Canal Treatment</option>
+                <option value="Teeth Cleaning">Teeth Cleaning</option>
+                <option value="Dental Implants">Dental Implants</option>
+                <option value="Braces & Aligners">Braces & Aligners</option>
+                <option value="Teeth Whitening">Teeth Whitening</option>
+                <option value="Cosmetic Dentistry">Cosmetic Dentistry</option>
+                <option value="Tooth Extraction">Tooth Extraction</option>
+                <option value="Pediatric Dentistry">Pediatric Dentistry</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="patientMessage">Message (Optional)</label>
+              <textarea id="patientMessage" name="message" placeholder="Tell us about your dental concern..." rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submitAppointment">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Confirm Appointment
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS SECTION ===== -->
+  <section class="testimonials" id="testimonials" aria-label="Patient Testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          Patient Reviews
+        </div>
+        <h2 class="section-title">What Our <span>Patients Say</span></h2>
+        <p class="section-subtitle">Real experiences from our valued patients who trust us with their smiles.</p>
+      </div>
+
+      <div class="testimonials-slider" id="testimonialsSlider">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testimonial-text">"Dr. Gupta is an exceptional dentist. He made my root canal treatment completely painless. The clinic is very clean and well-equipped. Highly recommended for anyone looking for quality dental care!"</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">RK</div>
+              <div class="testimonial-author-info">
+                <h4>Rajesh Kumar</h4>
+                <span>Root Canal Treatment</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testimonial-text">"I was scared of dentists my whole life, but Dr. A.K. Gupta completely changed that. His gentle approach and friendly demeanor made my teeth cleaning a pleasant experience. My smile has never looked better!"</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">PS</div>
+              <div class="testimonial-author-info">
+                <h4>Priya Sharma</h4>
+                <span>Teeth Cleaning & Whitening</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testimonial-text">"Got my dental implants done here and the results are amazing! They look and feel just like natural teeth. Dr. Gupta explained every step of the process. The best dental clinic in the area!"</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">AV</div>
+              <div class="testimonial-author-info">
+                <h4>Amit Verma</h4>
+                <span>Dental Implants</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 4 -->
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testimonial-text">"My daughter was very nervous about her first dental visit, but Dr. Gupta was so kind and patient with her. He made the experience fun and stress-free. We've found our family dentist for life!"</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">SG</div>
+              <div class="testimonial-author-info">
+                <h4>Sunita Gupta</h4>
+                <span>Pediatric Dentistry</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 5 -->
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testimonial-text">"I got braces from Dr. A.K. Gupta and the transformation is incredible. Throughout the treatment, the team was supportive and professional. My new smile gives me so much confidence now!"</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">NP</div>
+              <div class="testimonial-author-info">
+                <h4>Neha Patel</h4>
+                <span>Braces & Aligners</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 6 -->
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testimonial-text">"Excellent service and very reasonable prices. Dr. Gupta did my cosmetic dentistry work and I'm amazed at the results. The clinic maintains the highest hygiene standards. Absolutely trustworthy!"</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">MS</div>
+              <div class="testimonial-author-info">
+                <h4>Manish Singh</h4>
+                <span>Cosmetic Dentistry</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonials-controls">
+        <button class="testimonial-btn" id="testimonialPrev" aria-label="Previous testimonial">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="testimonial-btn" id="testimonialNext" aria-label="Next testimonial">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="contact" id="contact" aria-label="Contact Us">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Contact Us
+        </div>
+        <h2 class="section-title">Visit Our <span>Clinic</span></h2>
+        <p class="section-subtitle">We'd love to see you! Find us at our convenient location or get in touch through any of the channels below.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-cards reveal-left">
+          <div class="contact-card" id="contact-phone">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <h4>Phone</h4>
+              <a href="tel:+918601060738">+91 86010 60738</a>
+            </div>
+          </div>
+
+          <div class="contact-card" id="contact-address">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h4>Address</h4>
+              <span>Banakta Road, Badhu Chauraha, Katya, UP 274404</span>
+            </div>
+          </div>
+
+          <div class="contact-card" id="contact-hours">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h4>Working Hours</h4>
+              <span>Mon – Sat: 9 AM – 8 PM | Sun: 10 AM – 2 PM</span>
+            </div>
+          </div>
+
+          <div class="contact-buttons">
+            <a href="tel:+918601060738" class="contact-btn call" id="contactCallBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              Call Now
+            </a>
+            <a href="https://wa.me/918601060738?text=Hello%20Dr.%20A.K.%20Gupta%2C%20I%20would%20like%20to%20book%20an%20appointment." class="contact-btn whatsapp" target="_blank" rel="noopener" id="contactWhatsappBtn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-map reveal-right">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1800!2d84.0622355!3d26.6121421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3993bcf73b414b51%3A0x3b932d6148430cfc!2sDr.%20Shivam!5e0!3m2!1sen!2sin!4v1717600000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Abhishek Dental Clinic Location"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">
+              <svg viewBox="0 0 64 64"><path d="M32 4C24 4 18 10 16 18c-2 8-8 28-6 36 2 6 6 6 8 2 2-4 6-12 8-12h12c2 0 6 8 8 12 2 4 6 4 8-2 2-8-4-28-6-36C46 10 40 4 32 4z"/></svg>
+            </div>
+            <span class="footer-logo-name">Abhishek Dental Clinic</span>
+          </div>
+          <p>Providing expert dental care with a gentle touch. Your smile is our priority. Visit us for a consultation and experience the difference.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/abhishek.gupta.953974" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/abhi_gupta_____love/" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#1e293b"/></svg>
+            </a>
+            <a href="https://wa.me/918601060738" aria-label="WhatsApp" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Doctor</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#appointment">Book Appointment</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Dental Checkup</a></li>
+            <li><a href="#services">Root Canal</a></li>
+            <li><a href="#services">Teeth Cleaning</a></li>
+            <li><a href="#services">Dental Implants</a></li>
+            <li><a href="#services">Braces & Aligners</a></li>
+            <li><a href="#services">Teeth Whitening</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+918601060738">+91 86010 60738</a></li>
+            <li><a href="#">Banakta Road, Badhu Chauraha,<br>Katya, UP 274404</a></li>
+            <li><a href="#">Mon – Sat: 9 AM – 8 PM</a></li>
+            <li><a href="#">Sun: 10 AM – 2 PM</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 <span>Abhishek Dental Clinic</span>. All rights reserved.</p>
+        <p>Designed and Developed with ❤️ by <span>Shubham Gupta</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING WHATSAPP ===== -->
+  <a href="https://wa.me/918601060738?text=Hello%20Dr.%20A.K.%20Gupta%2C%20I%20would%20like%20to%20book%20an%20appointment." class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp" id="floatingWhatsapp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+
+
+
+  <script src="index.js"></script>
+</body>
+</html>
