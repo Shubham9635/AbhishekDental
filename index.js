@@ -475,7 +475,7 @@ function initMobileCarousels() {
 
       dotsContainer.style.display = 'flex';
       const gridWidth = grid.offsetWidth;
-      const gridCenter = grid.scrollLeft + gridWidth / 2;
+      const viewportCenter = gridWidth / 2;
       const stepDistance = cards[1] ? (cards[1].offsetLeft - cards[0].offsetLeft) : gridWidth;
 
       let activeIndex = 0;
@@ -484,8 +484,8 @@ function initMobileCarousels() {
       cards.forEach((card, idx) => {
         // Calculate the card center relative to the grid's scrolling viewport
         const relativeLeft = card.offsetLeft - grid.scrollLeft;
-        const cardCenter = relativeLeft + card.offsetWidth / 2;
-        const diff = cardCenter - gridCenter;
+        const cardCenterViewport = relativeLeft + card.offsetWidth / 2;
+        const diff = cardCenterViewport - viewportCenter;
         
         // Track the closest card to the viewport center to determine active index
         const absDiff = Math.abs(diff);
@@ -505,8 +505,8 @@ function initMobileCarousels() {
 
         if (clampedRatio < 0) {
           // Left card (being swiped away to the left)
-          // Counteract 80% of its movement so it stays visible underneath (overlap)
-          tx = -clampedRatio * card.offsetWidth * 0.8;
+          // Counteract 30% of its movement so it stays visible underneath (overlap)
+          tx = -clampedRatio * card.offsetWidth * 0.3;
           scale = 0.9 + (1 + clampedRatio) * 0.1; // scale down slightly (to 0.9)
           opacity = 1 + clampedRatio * 0.6; // fade to 0.4
         } else {
