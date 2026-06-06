@@ -419,72 +419,130 @@ function initBeforeAfterScroll() {
 
 initBeforeAfterScroll();
 
-// ===== BOOK PAGE FLIP FOR MOBILE CAROUSELS =====
-function initBookPageFlip() {
+// ===== OVERLAP SWIPING & DYNAMIC DOT INDICATORS FOR MOBILE CAROUSELS =====
+function initMobileCarousels() {
   const grids = document.querySelectorAll('.services-grid, .why-grid');
   
   grids.forEach(grid => {
     if (!grid) return;
 
-    function updatePageFlip() {
+    const cards = Array.from(grid.children).filter(child => !child.classList.contains('carousel-dots'));
+    if (cards.length === 0) return;
+
+    // Avoid duplicating dots container if script is re-run
+    let dotsContainer = grid.nextElementSibling;
+    if (dotsContainer && dotsContainer.classList.contains('carousel-dots')) {
+      dotsContainer.innerHTML = '';
+    } else {
+      dotsContainer = document.createElement('div');
+      dotsContainer.classList.add('carousel-dots');
+      grid.parentNode.insertBefore(dotsContainer, grid.nextSibling);
+    }
+
+    // Create dots and attach click scroll handlers
+    cards.forEach((card, idx) => {
+      const dot = document.createElement('span');
+      dot.classList.add('carousel-dot');
+      if (idx === 0) dot.classList.add('active');
+      
+      dot.addEventListener('click', () => {
+        // Scroll to the card center relative to the grid
+        const gridWidth = grid.offsetWidth;
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const scrollTarget = cardCenter - gridWidth / 2;
+        
+        grid.scrollTo({
+          left: scrollTarget,
+          behavior: 'smooth'
+        });
+      });
+
+      dotsContainer.appendChild(dot);
+    });
+
+    function updateCarousel() {
       // Only run on mobile/tablet (width <= 768px)
       if (window.innerWidth > 768) {
         // Reset styles for desktop
-        Array.from(grid.children).forEach(card => {
+        cards.forEach(card => {
           card.style.transform = '';
           card.style.opacity = '';
           card.style.zIndex = '';
         });
+        dotsContainer.style.display = 'none';
         return;
       }
 
-      const cards = grid.children;
+      dotsContainer.style.display = 'flex';
       const gridWidth = grid.offsetWidth;
-      const gridCenter = gridWidth / 2;
+      const gridCenter = grid.scrollLeft + gridWidth / 2;
 
-      for (let card of cards) {
+      let activeIndex = 0;
+      let minDiff = Infinity;
+
+      cards.forEach((card, idx) => {
         // Calculate the card center relative to the grid's scrolling viewport
         const relativeLeft = card.offsetLeft - grid.scrollLeft;
         const cardCenter = relativeLeft + card.offsetWidth / 2;
         const diff = cardCenter - gridCenter;
         
+        // Track the closest card to the viewport center to determine active index
+        const absDiff = Math.abs(diff);
+        if (absDiff < minDiff) {
+          minDiff = absDiff;
+          activeIndex = idx;
+        }
+
         // We use gridWidth as the normalization base
         const ratio = diff / gridWidth;
         const clampedRatio = Math.max(-1, Math.min(1, ratio));
 
-        let angle = 0;
+        let tx = 0;
+        let scale = 1;
         let opacity = 1;
         let zIndex = 1;
 
         if (clampedRatio < 0) {
-          // Card is moving to the left (page turning away)
-          angle = clampedRatio * 85; // Rotate up to -85deg on left edge
-          opacity = 1 + clampedRatio * 0.5; // Fade out as it turns
-          // Lift z-index of turning page so it overlaps cards underneath
-          zIndex = Math.round((1 + clampedRatio) * 10) + 10;
-        } else {
-          // Card is to the right (incoming page waiting to be turned)
-          angle = clampedRatio * 20; // Rotate slightly back (up to 20deg) to show page curve
-          opacity = 1 - clampedRatio * 0.25; // Fade in as it comes to center
+          // Left card (being swiped away to the left)
+          // Counteract 75% of its movement so it stays visible underneath (overlap)
+          tx = -clampedRatio * card.offsetWidth * 0.75;
+          scale = 0.9 + (1 + clampedRatio) * 0.1; // scale down slightly (to 0.9)
+          opacity = 1 + clampedRatio * 0.5; // fade slightly
           zIndex = 1;
+        } else {
+          // Right card (incoming from the right, slides normally on top of the left card)
+          tx = 0;
+          scale = 1;
+          opacity = 1;
+          zIndex = 2;
         }
 
-        card.style.transform = `perspective(1000px) rotateY(${angle.toFixed(2)}deg)`;
+        card.style.transform = `translateX(${tx.toFixed(1)}px) scale(${scale.toFixed(3)})`;
         card.style.opacity = opacity.toFixed(3);
         card.style.zIndex = zIndex;
-      }
+      });
+
+      // Update indicator dots active state
+      const dots = dotsContainer.querySelectorAll('.carousel-dot');
+      dots.forEach((dot, idx) => {
+        if (idx === activeIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
     }
 
     // Attach scroll and resize listeners
-    grid.addEventListener('scroll', updatePageFlip, { passive: true });
-    window.addEventListener('resize', updatePageFlip, { passive: true });
+    grid.addEventListener('scroll', updateCarousel, { passive: true });
+    window.addEventListener('resize', updateCarousel, { passive: true });
     
-    // Also run on page load and periodically to ensure correct rendering
-    window.addEventListener('load', updatePageFlip);
-    updatePageFlip();
-    setTimeout(updatePageFlip, 200);
-    setTimeout(updatePageFlip, 800); // safety catch after preloader hides
+    // Initial runs to position everything correctly
+    window.addEventListener('load', updateCarousel);
+    updateCarousel();
+    setTimeout(updateCarousel, 200);
+    setTimeout(updateCarousel, 800);
   });
 }
 
-initBookPageFlip();
+initMobileCarousels();
