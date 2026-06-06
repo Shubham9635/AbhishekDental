@@ -763,7 +763,8 @@ select {
 
 .about-image-main img {
   width: 100%;
-  height: 500px;
+  height: auto;
+  aspect-ratio: 1.12 / 1;
   object-fit: cover;
   object-position: top;
   transition: transform 0.6s ease;
@@ -1712,6 +1713,16 @@ select {
   font-weight: 600;
 }
 
+.footer-bottom a {
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.footer-bottom a:hover span {
+  color: var(--white);
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.4);
+}
+
 /* ===== FLOATING WHATSAPP ===== */
 .floating-whatsapp {
   position: fixed;
@@ -1976,8 +1987,35 @@ select {
     box-shadow: var(--shadow-md);
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
+  .services-grid,
+  .why-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    padding: 20px 24px 30px;
+    margin: 0 -24px;
+  }
+
+  .services-grid::-webkit-scrollbar,
+  .why-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .services-grid,
+  .why-grid {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .service-card,
+  .why-card {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    margin: 0;
+    box-shadow: var(--shadow-md);
   }
 
   .ba-grid {
@@ -1986,10 +2024,6 @@ select {
 
   .ba-card.large {
     grid-column: span 1;
-  }
-
-  .why-grid {
-    grid-template-columns: 1fr;
   }
 
   .contact-grid {
@@ -2063,6 +2097,22 @@ select {
     height: 42px;
     bottom: 20px;
     left: 20px;
+  }
+
+  .about-experience-badge {
+    width: 95px;
+    height: 95px;
+    bottom: -10px;
+    right: -10px;
+    border-width: 3px;
+  }
+
+  .about-experience-badge .number {
+    font-size: 1.8rem;
+  }
+
+  .about-experience-badge .label {
+    font-size: 0.55rem;
   }
 }
 
