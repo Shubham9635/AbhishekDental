@@ -476,6 +476,7 @@ function initMobileCarousels() {
       dotsContainer.style.display = 'flex';
       const gridWidth = grid.offsetWidth;
       const gridCenter = grid.scrollLeft + gridWidth / 2;
+      const stepDistance = cards[1] ? (cards[1].offsetLeft - cards[0].offsetLeft) : gridWidth;
 
       let activeIndex = 0;
       let minDiff = Infinity;
@@ -493,28 +494,26 @@ function initMobileCarousels() {
           activeIndex = idx;
         }
 
-        // We use gridWidth as the normalization base
-        const ratio = diff / gridWidth;
+        // Normalize using stepDistance instead of gridWidth for exact progression
+        const ratio = diff / stepDistance;
         const clampedRatio = Math.max(-1, Math.min(1, ratio));
 
         let tx = 0;
         let scale = 1;
         let opacity = 1;
-        let zIndex = 1;
+        const zIndex = idx + 1; // Fixed stacking context
 
         if (clampedRatio < 0) {
           // Left card (being swiped away to the left)
-          // Counteract 75% of its movement so it stays visible underneath (overlap)
-          tx = -clampedRatio * card.offsetWidth * 0.75;
+          // Counteract 80% of its movement so it stays visible underneath (overlap)
+          tx = -clampedRatio * card.offsetWidth * 0.8;
           scale = 0.9 + (1 + clampedRatio) * 0.1; // scale down slightly (to 0.9)
-          opacity = 1 + clampedRatio * 0.5; // fade slightly
-          zIndex = 1;
+          opacity = 1 + clampedRatio * 0.6; // fade to 0.4
         } else {
           // Right card (incoming from the right, slides normally on top of the left card)
           tx = 0;
           scale = 1;
           opacity = 1;
-          zIndex = 2;
         }
 
         card.style.transform = `translateX(${tx.toFixed(1)}px) scale(${scale.toFixed(3)})`;

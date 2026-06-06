@@ -2057,7 +2057,7 @@ select {
     margin: 0;
     box-shadow: var(--shadow-md);
     transform-origin: center center;
-    transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+    transition: none;
     backface-visibility: hidden;
   }
 
