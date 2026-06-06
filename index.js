@@ -418,3 +418,73 @@ function initBeforeAfterScroll() {
 }
 
 initBeforeAfterScroll();
+
+// ===== BOOK PAGE FLIP FOR MOBILE CAROUSELS =====
+function initBookPageFlip() {
+  const grids = document.querySelectorAll('.services-grid, .why-grid');
+  
+  grids.forEach(grid => {
+    if (!grid) return;
+
+    function updatePageFlip() {
+      // Only run on mobile/tablet (width <= 768px)
+      if (window.innerWidth > 768) {
+        // Reset styles for desktop
+        Array.from(grid.children).forEach(card => {
+          card.style.transform = '';
+          card.style.opacity = '';
+          card.style.zIndex = '';
+        });
+        return;
+      }
+
+      const cards = grid.children;
+      const gridWidth = grid.offsetWidth;
+      const gridCenter = gridWidth / 2;
+
+      for (let card of cards) {
+        // Calculate the card center relative to the grid's scrolling viewport
+        const relativeLeft = card.offsetLeft - grid.scrollLeft;
+        const cardCenter = relativeLeft + card.offsetWidth / 2;
+        const diff = cardCenter - gridCenter;
+        
+        // We use gridWidth as the normalization base
+        const ratio = diff / gridWidth;
+        const clampedRatio = Math.max(-1, Math.min(1, ratio));
+
+        let angle = 0;
+        let opacity = 1;
+        let zIndex = 1;
+
+        if (clampedRatio < 0) {
+          // Card is moving to the left (page turning away)
+          angle = clampedRatio * 85; // Rotate up to -85deg on left edge
+          opacity = 1 + clampedRatio * 0.5; // Fade out as it turns
+          // Lift z-index of turning page so it overlaps cards underneath
+          zIndex = Math.round((1 + clampedRatio) * 10) + 10;
+        } else {
+          // Card is to the right (incoming page waiting to be turned)
+          angle = clampedRatio * 20; // Rotate slightly back (up to 20deg) to show page curve
+          opacity = 1 - clampedRatio * 0.25; // Fade in as it comes to center
+          zIndex = 1;
+        }
+
+        card.style.transform = `perspective(1000px) rotateY(${angle.toFixed(2)}deg)`;
+        card.style.opacity = opacity.toFixed(3);
+        card.style.zIndex = zIndex;
+      }
+    }
+
+    // Attach scroll and resize listeners
+    grid.addEventListener('scroll', updatePageFlip, { passive: true });
+    window.addEventListener('resize', updatePageFlip, { passive: true });
+    
+    // Also run on page load and periodically to ensure correct rendering
+    window.addEventListener('load', updatePageFlip);
+    updatePageFlip();
+    setTimeout(updatePageFlip, 200);
+    setTimeout(updatePageFlip, 800); // safety catch after preloader hides
+  });
+}
+
+initBookPageFlip();

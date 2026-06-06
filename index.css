@@ -2026,9 +2026,11 @@ select {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    gap: 20px;
-    padding: 20px 24px 30px;
+    gap: 16px;
+    padding: 20px 5% 30px 5%;
     margin: 0 -24px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
   }
 
   .services-grid::-webkit-scrollbar,
@@ -2044,10 +2046,21 @@ select {
 
   .service-card,
   .why-card {
-    flex: 0 0 280px;
-    scroll-snap-align: start;
+    flex: 0 0 90%;
+    max-width: 90%;
+    scroll-snap-align: center;
     margin: 0;
     box-shadow: var(--shadow-md);
+    transform-origin: 0% 50%;
+    transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+    backface-visibility: hidden;
+  }
+
+  .reveal.service-card,
+  .reveal.why-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
   .ba-grid {
