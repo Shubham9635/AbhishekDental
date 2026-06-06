@@ -12,14 +12,40 @@ const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
 
-// Sticky navbar on scroll
+// Sticky navbar and auto-hiding on scroll
+let lastScrollY = window.scrollY;
+
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 80) {
+  const currentScrollY = window.scrollY;
+
+  // 1. Sticky navbar toggle
+  if (currentScrollY > 80) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
   }
-});
+
+  // 2. Mobile auto-hide header toggle
+  if (window.innerWidth <= 768) {
+    // Skip hiding if mobile menu is open
+    if (navMenu && navMenu.classList.contains('open')) {
+      return;
+    }
+
+    if (currentScrollY > 80 && currentScrollY > lastScrollY) {
+      // Scrolling down: hide header
+      navbar.classList.add('navbar-hidden');
+    } else {
+      // Scrolling up or at top: show header
+      navbar.classList.remove('navbar-hidden');
+    }
+  } else {
+    // Desktop reset
+    navbar.classList.remove('navbar-hidden');
+  }
+
+  lastScrollY = currentScrollY;
+}, { passive: true });
 
 // Mobile menu toggle
 navToggle.addEventListener('click', () => {
@@ -521,13 +547,15 @@ function initMobileCarousels() {
         card.style.zIndex = zIndex;
       });
 
-      // Update indicator dots active state
+      // Update indicator dots and card active state
       const dots = dotsContainer.querySelectorAll('.carousel-dot');
       dots.forEach((dot, idx) => {
         if (idx === activeIndex) {
           dot.classList.add('active');
+          cards[idx].classList.add('active-card');
         } else {
           dot.classList.remove('active');
+          cards[idx].classList.remove('active-card');
         }
       });
     }

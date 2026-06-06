@@ -260,6 +260,10 @@ select {
   box-shadow: var(--shadow-sm);
 }
 
+.navbar.navbar-hidden {
+  transform: translateY(-100%);
+}
+
 .navbar .container {
   display: flex;
   align-items: center;
@@ -2066,6 +2070,29 @@ select {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  /* Mobile active card highlight override styles */
+  .service-card.active-card::before {
+    opacity: 1;
+  }
+  .service-card.active-card .service-icon {
+    background: var(--gradient-primary);
+    box-shadow: 0 8px 25px rgba(8, 145, 178, 0.3);
+  }
+  .service-card.active-card .service-icon svg {
+    stroke: var(--white);
+  }
+
+  .why-card.active-card::after {
+    transform: scaleX(1);
+  }
+  .why-card.active-card .why-icon {
+    background: var(--gradient-primary);
+    box-shadow: 0 8px 25px rgba(8, 145, 178, 0.3);
+  }
+  .why-card.active-card .why-icon svg {
+    stroke: var(--white);
   }
 
   .carousel-dots {
