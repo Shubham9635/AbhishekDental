@@ -260,10 +260,6 @@ select {
   box-shadow: var(--shadow-sm);
 }
 
-.navbar.navbar-hidden {
-  transform: translateY(-100%);
-}
-
 .navbar .container {
   display: flex;
   align-items: center;

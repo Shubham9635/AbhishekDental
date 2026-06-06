@@ -12,40 +12,14 @@ const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
 
-// Sticky navbar and auto-hiding on scroll
-let lastScrollY = window.scrollY;
-
+// Sticky navbar on scroll
 window.addEventListener('scroll', () => {
-  const currentScrollY = window.scrollY;
-
-  // 1. Sticky navbar toggle
-  if (currentScrollY > 80) {
+  if (window.scrollY > 80) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
   }
-
-  // 2. Mobile auto-hide header toggle
-  if (window.innerWidth <= 768) {
-    // Skip hiding if mobile menu is open
-    if (navMenu && navMenu.classList.contains('open')) {
-      return;
-    }
-
-    if (currentScrollY > 80 && currentScrollY > lastScrollY) {
-      // Scrolling down: hide header
-      navbar.classList.add('navbar-hidden');
-    } else {
-      // Scrolling up or at top: show header
-      navbar.classList.remove('navbar-hidden');
-    }
-  } else {
-    // Desktop reset
-    navbar.classList.remove('navbar-hidden');
-  }
-
-  lastScrollY = currentScrollY;
-}, { passive: true });
+});
 
 // Mobile menu toggle
 navToggle.addEventListener('click', () => {
