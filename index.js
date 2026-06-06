@@ -354,3 +354,67 @@ document.querySelectorAll('.form-group input, .form-group textarea, .form-group 
     input.parentElement.classList.remove('focused');
   });
 });
+
+// ===== BEFORE & AFTER SCROLL PINNING & STACKING =====
+function initBeforeAfterScroll() {
+  const section = document.querySelector('.before-after');
+  const cards = document.querySelectorAll('.ba-card');
+  if (!section || cards.length === 0) return;
+
+  const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
+
+  function updateCardStack() {
+    const rect = section.getBoundingClientRect();
+    const sectionTop = rect.top + window.scrollY;
+    const sectionHeight = rect.height;
+    const windowHeight = window.innerHeight;
+
+    // Calculate how much we have scrolled past the start of the section
+    const maxScroll = sectionHeight - windowHeight;
+    const currentScroll = window.scrollY - sectionTop;
+    const progress = clamp(currentScroll / maxScroll, 0, 1);
+
+    // Update each card's progress variable
+    cards.forEach((card, idx) => {
+      if (idx === 0) {
+        card.style.setProperty('--card-progress', '1');
+        card.classList.add('active-top');
+        return;
+      }
+
+      // Card 1 (idx 0) is always shown.
+      // Card 2 (idx 1) starts at progress 0.05
+      // Card 3 (idx 2) starts at progress 0.30
+      // Card 4 (idx 3) starts at progress 0.55
+      const start = 0.05 + (idx - 1) * 0.25;
+      const duration = 0.22; // leaving a small scroll range at the end of each card animation
+      const cardProgress = clamp((progress - start) / duration, 0, 1);
+
+      card.style.setProperty('--card-progress', cardProgress.toFixed(4));
+      
+      // Make only the top active card interactive
+      if (cardProgress > 0.99) {
+        card.classList.add('active-top');
+        // Remove active-top from previous cards
+        for (let i = 0; i < idx; i++) {
+          cards[i].classList.remove('active-top');
+        }
+      } else {
+        card.classList.remove('active-top');
+        // Restore active-top to previous card if this one is not yet fully visible
+        if (idx > 0 && cards[idx - 1].style.getPropertyValue('--card-progress') >= 0.99) {
+          cards[idx - 1].classList.add('active-top');
+        }
+      }
+    });
+  }
+
+  // Bind to scroll and resize
+  window.addEventListener('scroll', updateCardStack, { passive: true });
+  window.addEventListener('resize', updateCardStack, { passive: true });
+  
+  // Run once initially
+  updateCardStack();
+}
+
+initBeforeAfterScroll();
